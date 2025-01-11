@@ -2,6 +2,7 @@ import { animate } from "./helpers";
 
 export const menu = () => {
   const menu = document.querySelector(".popup-dialog-menu");
+  const menuPopup = document.querySelector(".popup-menu");
   const showMenu = document.querySelector(".menu");
   const hideMenu = document.querySelector(".close-menu");
   const nav = document.querySelector(".popup-menu-nav");
@@ -16,6 +17,8 @@ export const menu = () => {
         },
         draw(progress) {
           menu.style.transform = `translateY(${100 - 100 * progress}%)`;
+          menuPopup.style.display = "block";
+          menuPopup.style.visibility = " visible";
         },
       });
     } else {
@@ -26,6 +29,8 @@ export const menu = () => {
         },
         draw(progress) {
           menu.style.transform = `translateX(${100 - 100 * progress}%)`;
+          menuPopup.style.display = "block";
+          menuPopup.style.visibility = " visible";
         },
       });
     }
@@ -40,6 +45,7 @@ export const menu = () => {
         },
         draw(progress) {
           menu.style.transform = `translateY(${-100 * progress}%)`;
+          menuPopup.style.display = "none";
         },
       });
     } else {
@@ -50,6 +56,7 @@ export const menu = () => {
         },
         draw(progress) {
           menu.style.transform = `translateX(${100 * progress}%)`;
+          menuPopup.style.display = "none";
         },
       });
     }
@@ -62,13 +69,13 @@ export const menu = () => {
     document.querySelector(href).scrollIntoView({
       behavior: "smooth",
     });
-  }
+  };
 
   showMenu.addEventListener("click", openMenu);
   hideMenu.addEventListener("click", closeMenu);
   nav.addEventListener("click", (e) => {
     if (e.target.closest(".menu-link")) {
-      smoothScroll(e)
+      smoothScroll(e);
       closeMenu();
     }
   });
