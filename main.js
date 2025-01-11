@@ -1,2 +1,2 @@
-import {menu} from './src/modules/menu'
-menu()
+import {phoneMask} from './src/modules/phoneMask'
+phoneMask()
