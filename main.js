@@ -7,6 +7,6 @@ import {modalFormula} from './src/modules/modalFormula'
 accordion();
 menu()
 modal(".popup-repair-types",".popup-dialog-repair-types",".link-list",)
+modal(".popup-privacy",".popup-dialog-privacy",".link-privacy",)
 phoneMask()
 modalFormula()
-
